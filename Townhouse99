@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ZATYSHOK — Апартаменти подобово в Петропавлівській Борщагівці</title>
+<meta name="description" content="Затишні апартаменти подобово в Петропавлівській Борщагівці, Київська область. 5 квартир для комфортного проживання.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#faf8f5;
+    --bg-alt:#f2ede6;
+    --ink:#20211f;
+    --ink-soft:#5c5b56;
+    --line:#e4ddd2;
+    --accent:#b5693f;
+    --accent-soft:#e9dccb;
+    --white:#ffffff;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(32,33,31,0.06);
+    --shadow-lg:0 20px 50px rgba(32,33,31,0.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .container{max-width:1180px;margin:0 auto;padding:0 28px;}
+  section{padding:96px 0;}
+  h1,h2,h3{font-weight:700;letter-spacing:-0.02em;}
+  .eyebrow{
+    text-transform:uppercase;
+    letter-spacing:0.14em;
+    font-size:12px;
+    font-weight:700;
+    color:var(--accent);
+    margin-bottom:14px;
+  }
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,248,245,0.85);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 28px;max-width:1180px;margin:0 auto;
+  }
+  .logo{font-size:20px;font-weight:800;letter-spacing:-0.01em;}
+  .logo span{color:var(--accent);}
+  .nav-links{display:flex;gap:36px;font-size:15px;font-weight:500;}
+  .nav-links a{color:var(--ink-soft);transition:color .2s;}
+  .nav-links a:hover{color:var(--ink);}
+  .nav-cta{
+    display:flex;align-items:center;gap:18px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;
+    padding:12px 24px;
+    border-radius:999px;
+    font-weight:600;font-size:14px;
+    border:1px solid transparent;
+    cursor:pointer;
+    transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{background:var(--ink);color:var(--white);}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
+  .btn-outline{background:transparent;border:1px solid var(--ink);color:var(--ink);}
+  .btn-outline:hover{background:var(--ink);color:var(--white);}
+  .menu-toggle{display:none;background:none;border:none;font-size:24px;cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    padding:90px 0 60px;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:center;
+  }
+  .hero h1{font-size:clamp(34px, 4.4vw, 56px);line-height:1.08;margin-bottom:22px;}
+  .hero p{font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:32px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+  .hero-stats{display:flex;gap:36px;}
+  .hero-stats div{display:flex;flex-direction:column;}
+  .hero-stats b{font-size:26px;font-weight:800;}
+  .hero-stats span{font-size:13px;color:var(--ink-soft);}
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow-lg);
+  }
+  .ph{
+    width:100%;height:100%;
+    display:flex;align-items:center;justify-content:center;
+    background:linear-gradient(135deg,#e7d9c6,#c9ab86 55%,#a9835b);
+    color:rgba(255,255,255,0.85);
+    font-size:14px;font-weight:600;letter-spacing:0.04em;
+    text-align:center;
+    position:relative;
+  }
+  .ph::after{
+    content:'📷 ЗАМІНІТЬ НА ФОТО';
+    position:absolute;bottom:16px;left:16px;right:16px;
+    background:rgba(0,0,0,0.35);
+    padding:8px 12px;border-radius:10px;
+    font-size:11px;
+  }
+  .ph-alt{background:linear-gradient(135deg,#d8c9b4,#b79b78 55%,#8f6c47);}
+  .ph-alt2{background:linear-gradient(135deg,#e3d3ba,#c2a37a 55%,#9c7749);}
+  .ph-alt3{background:linear-gradient(135deg,#ded0ba,#bd9d76 55%,#987447);}
+  .ph-alt4{background:linear-gradient(135deg,#e9dcc6,#cbae87 55%,#a2814f);}
+
+  /* Trust bar */
+  .trust{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    padding:32px 0;
+  }
+  .trust .container{
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;
+    color:var(--ink-soft);font-size:14px;font-weight:600;
+  }
+
+  /* Apartments */
+  .section-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    margin-bottom:44px;gap:24px;flex-wrap:wrap;
+  }
+  .section-head h2{font-size:clamp(28px,3vw,38px);}
+  .section-head p{color:var(--ink-soft);max-width:420px;font-size:15px;}
+
+  .apt-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+  }
+  .apt-card{
+    background:var(--white);
+    border-radius:var(--radius);
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    transition:transform .25s ease, box-shadow .25s ease;
+    cursor:pointer;
+    display:flex;flex-direction:column;
+  }
+  .apt-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);}
+  .apt-card .ph{aspect-ratio:4/3;font-size:12px;}
+  .apt-body{padding:22px 22px 26px;flex:1;display:flex;flex-direction:column;}
+  .apt-body h3{font-size:19px;margin-bottom:6px;}
+  .apt-meta{display:flex;gap:14px;color:var(--ink-soft);font-size:13px;margin-bottom:14px;flex-wrap:wrap;}
+  .apt-desc{color:var(--ink-soft);font-size:14px;margin-bottom:18px;flex:1;}
+  .apt-foot{display:flex;justify-content:space-between;align-items:center;}
+  .price{font-size:18px;font-weight:800;}
+  .price span{font-size:12px;font-weight:500;color:var(--ink-soft);}
+  .apt-link{font-size:13px;font-weight:700;color:var(--accent);}
+
+  /* Why us */
+  .why-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:24px;
+  }
+  .why-card{
+    background:var(--bg-alt);
+    border-radius:var(--radius);
+    padding:28px 24px;
+  }
+  .why-icon{font-size:26px;margin-bottom:16px;}
+  .why-card h3{font-size:16px;margin-bottom:8px;}
+  .why-card p{font-size:13px;color:var(--ink-soft);}
+
+  /* About */
+  .about{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;
+  }
+  .about-text p{color:var(--ink-soft);margin-bottom:16px;font-size:16px;}
+  .about-visual{aspect-ratio:1/1;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);}
+
+  /* CTA band */
+  .cta-band{
+    background:var(--ink);
+    color:var(--white);
+    border-radius:24px;
+    padding:64px 48px;
+    text-align:center;
+    margin:0 28px;
+  }
+  .cta-band h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px;}
+  .cta-band p{color:rgba(255,255,255,0.65);margin-bottom:30px;font-size:16px;}
+  .cta-band .btn-primary{background:var(--white);color:var(--ink);}
+  .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .cta-band .btn-outline{border-color:rgba(255,255,255,0.4);color:var(--white);}
+  .cta-band .btn-outline:hover{background:var(--white);color:var(--ink);}
+
+  /* Contact */
+  .contact-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:60px;
+  }
+  .contact-list{list-style:none;margin-top:28px;}
+  .contact-list li{
+    display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);
+    font-size:15px;
+  }
+  .contact-list li:last-child{border-bottom:1px solid var(--line);}
+  .contact-list b{min-width:120px;color:var(--ink-soft);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;}
+  .map-ph{
+    aspect-ratio:1/1;border-radius:var(--radius);
+    background:repeating-linear-gradient(45deg, #efe8db, #efe8db 12px, #e6dcc8 12px, #e6dcc8 24px);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--ink-soft);font-weight:600;font-size:14px;text-align:center;padding:20px;
+  }
+
+  /* Footer */
+  footer{border-top:1px solid var(--line);padding:44px 0;}
+  .footer-inner{
+    display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;
+    color:var(--ink-soft);font-size:13px;
+  }
+  .footer-links{display:flex;gap:22px;}
+
+  /* Modal */
+  .modal-overlay{
+    position:fixed;inset:0;background:rgba(20,19,17,0.55);
+    display:none;align-items:center;justify-content:center;
+    z-index:1000;padding:24px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal{
+    background:var(--white);
+    border-radius:22px;
+    max-width:880px;width:100%;
+    max-height:88vh;overflow-y:auto;
+    box-shadow:var(--shadow-lg);
+    position:relative;
+  }
+  .modal-close{
+    position:absolute;top:18px;right:18px;
+    width:38px;height:38px;border-radius:50%;
+    background:var(--white);border:1px solid var(--line);
+    font-size:18px;cursor:pointer;z-index:2;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .modal-gallery{
+    display:grid;grid-template-columns:1.4fr 1fr;gap:8px;
+    height:320px;
+  }
+  .modal-gallery .ph:first-child{grid-row:span 2;}
+  .modal-gallery .ph{aspect-ratio:auto;font-size:11px;border-radius:0;}
+  .modal-body{padding:32px 36px 40px;}
+  .modal-body h3{font-size:26px;margin-bottom:8px;}
+  .modal-meta{display:flex;gap:18px;color:var(--ink-soft);font-size:14px;margin-bottom:20px;flex-wrap:wrap;}
+  .modal-body p{color:var(--ink-soft);margin-bottom:20px;}
+  .amenities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-bottom:28px;}
+  .amenity{display:flex;gap:8px;align-items:center;font-size:14px;color:var(--ink);}
+  .modal-actions{display:flex;gap:12px;flex-wrap:wrap;align-items:center;}
+  .modal-price{font-size:22px;font-weight:800;margin-right:auto;}
+  .modal-price span{display:block;font-size:12px;font-weight:500;color:var(--ink-soft);}
+
+  @media (max-width:960px){
+    .hero{grid-template-columns:1fr;}
+    .hero-visual{order:-1;aspect-ratio:16/10;}
+    .apt-grid{grid-template-columns:repeat(2,1fr);}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .about{grid-template-columns:1fr;}
+    .contact-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .modal-gallery{grid-template-columns:1fr;height:auto;}
+    .modal-gallery .ph{aspect-ratio:16/10;}
+    .modal-gallery .ph:first-child{grid-row:auto;}
+  }
+  @media (max-width:600px){
+    section{padding:64px 0;}
+    .apt-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .cta-band{padding:44px 24px;margin:0 16px;}
+    .nav-cta .btn-outline{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="logo">ZATYSHOK<span>.</span></a>
+    <nav class="nav-links">
+      <a href="#apartments">Апартаменти</a>
+      <a href="#why">Переваги</a>
+      <a href="#about">Про нас</a>
+      <a href="#contact">Контакти</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="tel:+380000000000" class="btn btn-outline">+380 00 000 00 00</a>
+      <a href="#contact" class="btn btn-primary">Забронювати</a>
+    </div>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero container">
+    <div>
+      <div class="eyebrow">Оренда подобово · Петропавлівська Борщагівка</div>
+      <h1>Затишний дім на добу, де б ви не були поруч із Києвом</h1>
+      <p>Родинний бізнес із п'ятьма доглянутими апартаментами в Петропавлівській Борщагівці. Чисто, зручно, без зайвих слів — саме так, як має бути тимчасовий дім.</p>
+      <div class="hero-actions">
+        <a href="#apartments" class="btn btn-primary">Переглянути апартаменти</a>
+        <a href="#contact" class="btn btn-outline">Зв'язатися з нами</a>
+      </div>
+      <div class="hero-stats">
+        <div><b>5</b><span>апартаментів</span></div>
+        <div><b>100%</b><span>власний нагляд</span></div>
+        <div><b>24/7</b><span>заселення</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="ph">Головне фото</div>
+    </div>
+  </section>
+
+  <div class="trust">
+    <div class="container">
+      <span>Wi-Fi у кожній квартирі</span>
+      <span>Безкоштовне паркування</span>
+      <span>Самостійне заселення</span>
+      <span>Чисті рушники та білизна</span>
+      <span>Кухня в наявності</span>
+    </div>
+  </div>
+
+  <!-- APARTMENTS -->
+  <section id="apartments" class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Наші апартаменти</div>
+        <h2>П'ять квартир, кожна зі своїм характером</h2>
+      </div>
+      <p>Оберіть варіант, натисніть на картку, щоб побачити деталі, фото та зв'язатися для бронювання.</p>
+    </div>
+    <div class="apt-grid" id="aptGrid"></div>
+  </section>
+
+  <!-- WHY US -->
+  <section id="why" class="container">
+    <div class="section-head">
+      <div>
+        <div class="eyebrow">Чому обирають нас</div>
+        <h2>Комфорт без компромісів</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🔑</div>
+        <h3>Легке заселення</h3>
+        <p>Самостійне заселення у зручний час, без очікування та зайвих формальностей.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧼</div>
+        <h3>Ідеальна чистота</h3>
+        <p>Прибирання та заміна білизни перед кожним заїздом — особисто перевіряємо кожну деталь.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">📶</div>
+        <h3>Все необхідне</h3>
+        <p>Швидкий Wi-Fi, кухня, праска, фен — все, що потрібно для комфортного проживання.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💬</div>
+        <h3>Особистий підхід</h3>
+        <p>Родинний бізнес — ми на зв'язку та завжди підкажемо, куди піти й що подивитись поруч.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="container">
+    <div class="about">
+      <div class="about-visual">
+        <div class="ph ph-alt">Фото родини / будинку</div>
+      </div>
+      <div class="about-text">
+        <div class="eyebrow">Про нас</div>
+        <h2 style="font-size:32px;margin-bottom:18px;">Родинна справа з увагою до деталей</h2>
+        <p>Ми — родина, яка здає квартири подобово в Петропавлівській Борщагівці вже не перший рік. Кожну з п'яти квартир ми облаштовували самі, тож знаємо в них кожну дрібницю.</p>
+        <p>Для нас важливо, щоб гість почувався як удома: чисто, тихо, зручно і без зайвого клопоту. Тому ми завжди на зв'язку — від бронювання до виїзду.</p>
+        <a href="#contact" class="btn btn-outline">Написати нам</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section>
+    <div class="cta-band">
+      <h2>Готові забронювати свою добу затишку?</h2>
+      <p>Напишіть нам у Telegram або зателефонуйте — підберемо вільну квартиру під ваші дати.</p>
+      <div class="cta-actions">
+        <a href="https://t.me/your_telegram" class="btn btn-primary" target="_blank" rel="noopener">Написати в Telegram</a>
+        <a href="tel:+380000000000" class="btn btn-outline">Зателефонувати</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container">
+    <div class="contact-grid">
+      <div>
+        <div class="eyebrow">Контакти</div>
+        <h2 style="font-size:32px;margin-bottom:8px;">Завжди на зв'язку</h2>
+        <p style="color:var(--ink-soft);">Оберіть зручний спосіб зв'язку — відповідаємо швидко.</p>
+        <ul class="contact-list">
+          <li><b>Телефон</b><span>+380 00 000 00 00</span></li>
+          <li><b>Telegram</b><span>@your_telegram</span></li>
+          <li><b>Instagram</b><span>@your_instagram</span></li>
+          <li><b>Email</b><span>info@zatyshok.example</span></li>
+          <li><b>Адреса</b><span>с. Петропавлівська Борщагівка, Київська область</span></li>
+        </ul>
+      </div>
+      <div class="map-ph">Тут буде карта<br>(Google Maps embed з точною адресою)</div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© 2026 ZATYSHOK. Родинна оренда апартаментів подобово.</span>
+    <div class="footer-links">
+      <a href="#apartments">Апартаменти</a>
+      <a href="#about">Про нас</a>
+      <a href="#contact">Контакти</a>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal">
+    <button class="modal-close" id="modalClose">✕</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   ДАНІ ПРО АПАРТАМЕНТИ
+   Замініть текст, ціни та класи фото (ph, ph-alt, ph-alt2...)
+   на реальні фото: <img src="apartments/apt1-1.jpg" alt="...">
+   ========================================================= */
+const apartments = [
+  {
+    id: 1,
+    name: 'Апартаменти «Клен»',
+    area: '38 м²',
+    guests: '2 гостей',
+    rooms: '1 кімната',
+    price: '900',
+    photoClass: 'ph',
+    desc: 'Світла однокімнатна квартира з панорамними вікнами та зоною відпочинку. Ідеально для пари або відрядження.',
+    fullDesc: 'Затишна однокімнатна квартира з сучасним ремонтом. Простора спальна зона, зручний диван у вітальні, повністю обладнана кухня. Великі вікна дають багато природного світла впродовж дня.',
+    amenities: ['Wi-Fi', 'Кухня', 'Пральна машина', 'Праска', 'Фен', 'Парковка', 'Кондиціонер', 'Смарт-ТВ']
+  },
+  {
+    id: 2,
+    name: 'Апартаменти «Дуб»',
+    area: '52 м²',
+    guests: '4 гостей',
+    rooms: '2 кімнати',
+    price: '1300',
+    photoClass: 'ph ph-alt',
+    desc: 'Двокімнатна квартира для сім’ї чи компанії друзів, з окремою спальнею та просторою вітальнею.',
+    fullDesc: 'Простора двокімнатна квартира з окремою спальнею та вітальнею з розкладним диваном. Повністю обладнана кухня, є все необхідне для приготування їжі. Чудовий варіант для родини з дитиною.',
+    amenities: ['Wi-Fi', 'Кухня', 'Пральна машина', 'Дитяче ліжечко', 'Фен', 'Парковка', 'Кондиціонер', 'Смарт-ТВ']
+  },
+  {
+    id: 3,
+    name: 'Апартаменти «Ясен»',
+    area: '30 м²',
+    guests: '2 гостей',
+    rooms: 'Студія',
+    price: '800',
+    photoClass: 'ph ph-alt2',
+    desc: 'Компактна затишна студія з мінімалістичним інтер’єром — вигідний варіант для короткої поїздки.',
+    fullDesc: 'Акуратна студія в теплих тонах. Все необхідне в межах одного простору: зона сну, невеликий робочий куточок і компактна кухня. Гарний вибір для соло-подорожі чи короткого відрядження.',
+    amenities: ['Wi-Fi', 'Кухня', 'Праска', 'Фен', 'Парковка', 'Кондиціонер', 'Смарт-ТВ', 'Робоче місце']
+  },
+  {
+    id: 4,
+    name: 'Апартаменти «Липа»',
+    area: '60 м²',
+    guests: '5 гостей',
+    rooms: '2 кімнати',
+    price: '1500',
+    photoClass: 'ph ph-alt3',
+    desc: 'Найбільша квартира в нашій колекції — простора, зі спальнею, вітальнею та балконом.',
+    fullDesc: 'Наша найбільша та найсвітліша квартира. Дві повноцінні кімнати, простора кухня-вітальня, балкон з видом на двір. Підходить для більшої компанії або тривалого проживання.',
+    amenities: ['Wi-Fi', 'Кухня', 'Пральна машина', 'Балкон', 'Фен', 'Парковка', 'Кондиціонер', 'Смарт-ТВ']
+  },
+  {
+    id: 5,
+    name: 'Апартаменти «Верба»',
+    area: '34 м²',
+    guests: '2 гостей',
+    rooms: '1 кімната',
+    price: '850',
+    photoClass: 'ph ph-alt4',
+    desc: 'Тиха квартира з видом у двір — гарний вибір для тих, хто цінує спокій та комфорт.',
+    fullDesc: 'Тиха, спокійна квартира, розташована у глибині двору — мінімум шуму, максимум комфорту. Затишна спальна зона та зручна кухня-вітальня.',
+    amenities: ['Wi-Fi', 'Кухня', 'Праска', 'Фен', 'Парковка', 'Кондиціонер', 'Смарт-ТВ', 'Тихий двір']
+  }
+];
+
+const grid = document.getElementById('aptGrid');
+grid.innerHTML = apartments.map(a => `
+  <div class="apt-card" data-id="${a.id}">
+    <div class="${a.photoClass}">Фото — ${a.name}</div>
+    <div class="apt-body">
+      <h3>${a.name}</h3>
+      <div class="apt-meta">
+        <span>${a.rooms}</span>
+        <span>·</span>
+        <span>${a.area}</span>
+        <span>·</span>
+        <span>${a.guests}</span>
+      </div>
+      <p class="apt-desc">${a.desc}</p>
+      <div class="apt-foot">
+        <div class="price">${a.price} ₴ <span>/ доба</span></div>
+        <span class="apt-link">Детальніше →</span>
+      </div>
+    </div>
+  </div>
+`).join('');
+
+const overlay = document.getElementById('modalOverlay');
+const modalContent = document.getElementById('modalContent');
+
+function openModal(id){
+  const a = apartments.find(x => x.id === id);
+  modalContent.innerHTML = `
+    <div class="modal-gallery">
+      <div class="${a.photoClass}">Фото 1</div>
+      <div class="${a.photoClass}">Фото 2</div>
+      <div class="${a.photoClass}">Фото 3</div>
+    </div>
+    <div class="modal-body">
+      <h3>${a.name}</h3>
+      <div class="modal-meta">
+        <span>${a.rooms}</span>
+        <span>${a.area}</span>
+        <span>${a.guests}</span>
+      </div>
+      <p>${a.fullDesc}</p>
+      <div class="amenities-grid">
+        ${a.amenities.map(am => `<div class="amenity">✓ ${am}</div>`).join('')}
+      </div>
+      <div class="modal-actions">
+        <div class="modal-price">${a.price} ₴ <span>за добу</span></div>
+        <a href="https://t.me/your_telegram?text=Вітаю! Хочу забронювати ${encodeURIComponent(a.name)}" class="btn btn-primary" target="_blank" rel="noopener">Забронювати в Telegram</a>
+        <a href="tel:+380000000000" class="btn btn-outline">Зателефонувати</a>
+      </div>
+    </div>
+  `;
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(){
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+grid.addEventListener('click', e => {
+  const card = e.target.closest('.apt-card');
+  if(card) openModal(Number(card.dataset.id));
+});
+document.getElementById('modalClose').addEventListener('click', closeModal);
+overlay.addEventListener('click', e => { if(e.target === overlay) closeModal(); });
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+</script>
+
+</body>
+</html>
