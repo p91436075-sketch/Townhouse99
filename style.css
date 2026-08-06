@@ -1,8 +1,8 @@
 :root{
-  --bg:#060911;
-  --bg-alt:#0a0f1c;
-  --surface:#0e1524;
-  --surface-2:#141d33;
+  --bg:#0b1120;
+  --bg-alt:#101828;
+  --surface:#151f34;
+  --surface-2:#1a2440;
   --ink:#f3f0e6;
   --ink-soft:#93a0bf;
   --line:rgba(243,240,230,0.09);
@@ -19,9 +19,10 @@
 html{scroll-behavior:smooth;}
 body{
   font-family:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight:500;
   background:
-    radial-gradient(ellipse 900px 500px at 12% -8%, rgba(63,111,214,0.16), transparent),
-    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(203,161,53,0.08), transparent),
+    radial-gradient(ellipse 900px 500px at 12% -8%, rgba(63,111,214,0.18), transparent),
+    radial-gradient(ellipse 700px 500px at 100% 10%, rgba(203,161,53,0.09), transparent),
     var(--bg);
   color:var(--ink);
   line-height:1.6;
@@ -31,7 +32,7 @@ a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
 .container{max-width:1180px;margin:0 auto;padding:0 28px;}
 section{padding:104px 0;}
-h1,h2,h3{font-family:'Fraunces', Georgia, serif;font-weight:600;letter-spacing:-0.01em;}
+h1,h2,h3{font-family:'Fraunces', Georgia, serif;font-weight:700;letter-spacing:-0.01em;}
 .eyebrow{
   text-transform:uppercase;
   letter-spacing:0.18em;
@@ -54,9 +55,9 @@ header{
   display:flex;align-items:center;justify-content:space-between;
   padding:22px 28px;max-width:1180px;margin:0 auto;
 }
-.logo{font-family:'Fraunces', Georgia, serif;font-size:22px;font-weight:600;letter-spacing:0.01em;}
+.logo{font-family:'Fraunces', Georgia, serif;font-size:22px;font-weight:700;letter-spacing:0.01em;}
 .logo span{color:var(--accent);}
-.nav-links{display:flex;gap:38px;font-size:14px;font-weight:500;letter-spacing:0.01em;}
+.nav-links{display:flex;gap:38px;font-size:14px;font-weight:600;letter-spacing:0.01em;}
 .nav-links a{color:var(--ink-soft);transition:color .2s;}
 .nav-links a:hover{color:var(--accent-2);}
 .nav-cta{display:flex;align-items:center;gap:18px;}
@@ -149,7 +150,7 @@ header{
   display:flex;align-items:center;gap:4px;
 }
 .apt-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column;}
-.apt-body h3{font-family:'Fraunces', Georgia, serif;font-weight:600;font-size:20px;margin-bottom:8px;}
+.apt-body h3{font-family:'Fraunces', Georgia, serif;font-weight:700;font-size:20px;margin-bottom:8px;}
 .apt-meta{display:flex;gap:14px;color:var(--ink-soft);font-size:13px;margin-bottom:14px;flex-wrap:wrap;}
 .apt-desc{color:var(--ink-soft);font-size:14px;margin-bottom:20px;flex:1;}
 .apt-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--line);}
@@ -173,7 +174,7 @@ header{
 }
 .review-card:hover{border-color:rgba(203,161,53,0.35);transform:translateY(-4px);}
 .review-stars{color:var(--accent-2);font-size:14px;margin-bottom:16px;letter-spacing:3px;}
-.review-quote{font-family:'Fraunces', Georgia, serif;font-weight:500;font-size:16px;line-height:1.5;color:var(--ink);flex:1;margin-bottom:22px;}
+.review-quote{font-family:'Fraunces', Georgia, serif;font-weight:600;font-size:16px;line-height:1.5;color:var(--ink);flex:1;margin-bottom:22px;}
 .review-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;}
 .review-meta b{color:var(--ink);font-weight:700;display:block;font-size:14px;}
 .review-apt{font-size:11px;font-weight:700;color:var(--accent-2);text-transform:uppercase;letter-spacing:0.06em;}
@@ -183,7 +184,7 @@ header{
 .why-card{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:border-color .3s ease;}
 .why-card:hover{border-color:rgba(203,161,53,0.3);}
 .why-icon{font-size:24px;margin-bottom:18px;color:var(--accent-2);}
-.why-card h3{font-family:'Fraunces', Georgia, serif;font-weight:600;font-size:17px;margin-bottom:10px;}
+.why-card h3{font-family:'Fraunces', Georgia, serif;font-weight:700;font-size:17px;margin-bottom:10px;}
 .why-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
 
 /* About */
