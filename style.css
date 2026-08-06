@@ -217,13 +217,17 @@ header{
 .contact-list li{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:15px;}
 .contact-list li:last-child{border-bottom:1px solid var(--line);}
 .contact-list b{min-width:120px;color:var(--ink-soft);font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:0.06em;}
+.contact-list a{color:var(--ink);transition:color .2s ease;}
+.contact-list a:hover{color:var(--accent-2);}
 .map-ph{
   aspect-ratio:1/1;border-radius:var(--radius);
   border:1px solid var(--line);
   background:repeating-linear-gradient(45deg, var(--surface), var(--surface) 12px, var(--bg-alt) 12px, var(--bg-alt) 24px);
-  display:flex;align-items:center;justify-content:center;
-  color:var(--ink-soft);font-weight:600;font-size:14px;text-align:center;padding:20px;
+  display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;
+  color:var(--ink);font-weight:700;font-size:15px;text-align:center;padding:20px;
+  transition:border-color .3s ease, transform .3s ease;
 }
+.map-ph:hover{border-color:rgba(203,161,53,0.4);transform:translateY(-4px);}
 
 /* Footer */
 footer{border-top:1px solid var(--line);padding:44px 0;}
