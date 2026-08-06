@@ -1,15 +1,16 @@
 :root{
-  --bg:#faf8f5;
-  --bg-alt:#f2ede6;
-  --ink:#20211f;
-  --ink-soft:#5c5b56;
-  --line:#e4ddd2;
-  --accent:#b5693f;
-  --accent-soft:#e9dccb;
+  --bg:#070c18;
+  --bg-alt:#0d1830;
+  --surface:#111d38;
+  --ink:#edf1fb;
+  --ink-soft:#95a1c4;
+  --line:#22304f;
+  --accent:#4f8cff;
+  --accent-soft:#16233f;
   --white:#ffffff;
   --radius:18px;
-  --shadow:0 10px 30px rgba(32,33,31,0.06);
-  --shadow-lg:0 20px 50px rgba(32,33,31,0.12);
+  --shadow:0 10px 30px rgba(0,0,0,0.45);
+  --shadow-lg:0 24px 60px rgba(0,0,0,0.55);
 }
 *{box-sizing:border-box;margin:0;padding:0;}
 html{scroll-behavior:smooth;}
@@ -37,7 +38,7 @@ h1,h2,h3{font-weight:700;letter-spacing:-0.02em;}
 /* Header */
 header{
   position:sticky;top:0;z-index:100;
-  background:rgba(250,248,245,0.85);
+  background:rgba(7,12,24,0.85);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
@@ -61,10 +62,10 @@ header{
   transition:transform .15s ease, box-shadow .2s ease, background .2s ease;
   white-space:nowrap;
 }
-.btn-primary{background:var(--ink);color:var(--white);}
+.btn-primary{background:var(--accent);color:var(--white);}
 .btn-primary:hover{transform:translateY(-2px);box-shadow:var(--shadow);}
 .btn-outline{background:transparent;border:1px solid var(--ink);color:var(--ink);}
-.btn-outline:hover{background:var(--ink);color:var(--white);}
+.btn-outline:hover{background:var(--ink);color:var(--bg);}
 
 /* Hero */
 .hero{
@@ -115,7 +116,7 @@ header{
   gap:28px;
 }
 .apt-card{
-  background:var(--white);
+  background:var(--surface);
   border-radius:var(--radius);
   overflow:hidden;
   box-shadow:var(--shadow);
@@ -129,6 +130,7 @@ header{
 .apt-badge{
   position:absolute;top:14px;left:14px;
   background:rgba(255,255,255,0.92);
+  color:#101c33;
   padding:6px 12px;border-radius:999px;
   font-size:12px;font-weight:700;
   display:flex;align-items:center;gap:4px;
@@ -147,7 +149,7 @@ header{
   gap:24px;
 }
 .review-card{
-  background:var(--white);
+  background:var(--surface);
   border-radius:var(--radius);
   padding:26px 24px;
   box-shadow:var(--shadow);
@@ -174,13 +176,13 @@ header{
 .about-visual img{width:100%;height:100%;object-fit:cover;}
 
 /* CTA band */
-.cta-band{background:var(--ink);color:var(--white);border-radius:24px;padding:64px 48px;text-align:center;margin:0 28px;}
+.cta-band{background:linear-gradient(135deg,#1a3a7a,#2c5ce6);color:var(--white);border-radius:24px;padding:64px 48px;text-align:center;margin:0 28px;}
 .cta-band h2{font-size:clamp(26px,3.4vw,38px);margin-bottom:14px;}
-.cta-band p{color:rgba(255,255,255,0.65);margin-bottom:30px;font-size:16px;}
+.cta-band p{color:rgba(255,255,255,0.75);margin-bottom:30px;font-size:16px;}
 .cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
-.cta-band .btn-primary{background:var(--white);color:var(--ink);}
+.cta-band .btn-primary{background:var(--white);color:#1a3a7a;}
 .cta-band .btn-outline{border-color:rgba(255,255,255,0.4);color:var(--white);}
-.cta-band .btn-outline:hover{background:var(--white);color:var(--ink);}
+.cta-band .btn-outline:hover{background:var(--white);color:#1a3a7a;}
 
 /* Contact */
 .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
@@ -190,7 +192,7 @@ header{
 .contact-list b{min-width:120px;color:var(--ink-soft);font-weight:600;font-size:13px;text-transform:uppercase;letter-spacing:0.04em;}
 .map-ph{
   aspect-ratio:1/1;border-radius:var(--radius);
-  background:repeating-linear-gradient(45deg, #efe8db, #efe8db 12px, #e6dcc8 12px, #e6dcc8 24px);
+  background:repeating-linear-gradient(45deg, var(--surface), var(--surface) 12px, var(--bg-alt) 12px, var(--bg-alt) 24px);
   display:flex;align-items:center;justify-content:center;
   color:var(--ink-soft);font-weight:600;font-size:14px;text-align:center;padding:20px;
 }
@@ -233,7 +235,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;}
 .amenity{display:flex;gap:8px;align-items:center;font-size:15px;}
 
 .booking-card{
-  background:var(--white);
+  background:var(--surface);
   border-radius:var(--radius);
   box-shadow:var(--shadow-lg);
   padding:28px;
