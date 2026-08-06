@@ -140,6 +140,26 @@ header{
 .apt-foot{display:flex;justify-content:space-between;align-items:center;}
 .apt-link{font-size:13px;font-weight:700;color:var(--accent);}
 
+/* Reviews */
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+.review-card{
+  background:var(--white);
+  border-radius:var(--radius);
+  padding:26px 24px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+}
+.review-stars{color:var(--accent);font-size:14px;margin-bottom:14px;letter-spacing:2px;}
+.review-quote{font-size:15px;color:var(--ink);flex:1;margin-bottom:20px;}
+.review-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:14px;}
+.review-meta b{color:var(--ink);font-weight:700;display:block;font-size:14px;}
+.review-apt{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.04em;}
+
 /* Why us */
 .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
 .why-card{background:var(--bg-alt);border-radius:var(--radius);padding:28px 24px;}
@@ -250,6 +270,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;}
   .hero-visual{order:-1;aspect-ratio:16/10;}
   .apt-grid{grid-template-columns:repeat(2,1fr);}
   .why-grid{grid-template-columns:repeat(2,1fr);}
+  .review-grid{grid-template-columns:repeat(2,1fr);}
   .about{grid-template-columns:1fr;}
   .contact-grid{grid-template-columns:1fr;}
   .nav-links{display:none;}
@@ -263,6 +284,7 @@ footer{border-top:1px solid var(--line);padding:44px 0;}
   section{padding:64px 0;}
   .apt-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
+  .review-grid{grid-template-columns:1fr;}
   .cta-band{padding:44px 24px;margin:0 16px;}
   .nav-cta .btn-outline{display:none;}
   .amenities-grid{grid-template-columns:1fr;}
