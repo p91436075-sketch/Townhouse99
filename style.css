@@ -1,306 +1,385 @@
-<!DOCTYPE html>
-<html lang="uk">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TownHouse99 — Апартаменти подобово в Петропавлівській Борщагівці</title>
-<meta name="description" content="Затишні апартаменти подобово в Петропавлівській Борщагівці, Київська область. 5 апартаментів для комфортного проживання.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800&family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
+:root{
+  --bg:#fdf4f3;
+  --bg-alt:#f7e3e1;
+  --surface:#ffffff;
+  --surface-2:#fffaf9;
+  --ink:#3a1015;
+  --ink-soft:#8f5e5e;
+  --line:#f0d6d3;
+  --accent:#b3223c;
+  --accent-2:#7d1428;
+  --accent-soft:#f8dde1;
+  --white:#ffffff;
+  --radius:24px;
+  --shadow:0 14px 34px rgba(122,20,40,0.10);
+  --shadow-lg:0 30px 64px rgba(122,20,40,0.18);
+  --footer-bg:#2a0a10;
+  --footer-ink:#f3d9d9;
+  --footer-line:rgba(255,255,255,0.1);
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight:500;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.container{max-width:1180px;margin:0 auto;padding:0 28px;}
+section{padding:100px 0;}
+h1,h2,h3{font-family:'Nunito', 'Manrope', sans-serif;font-weight:800;letter-spacing:-0.01em;}
+.eyebrow{
+  text-transform:uppercase;
+  letter-spacing:0.16em;
+  font-size:12px;
+  font-weight:800;
+  color:var(--accent);
+  margin-bottom:16px;
+  display:flex;align-items:center;gap:10px;
+}
+.eyebrow::before{content:'';display:inline-block;width:20px;height:2px;border-radius:2px;background:var(--accent);}
 
-<header>
-  <div class="nav">
-    <a href="index.html#top" class="logo">TownHouse99</a>
-    <nav class="nav-links">
-      <a href="#about">Про нас</a>
-      <a href="#reviews">Відгуки</a>
-      <a href="#contact">Контакти</a>
-    </nav>
-    <div class="nav-cta">
-      <a href="tel:+380671287502" class="btn btn-outline">+380 67 128 75 02</a>
-      <a href="#contact" class="btn btn-primary">Забронювати</a>
-    </div>
-  </div>
-</header>
+/* Header */
+header{
+  position:sticky;top:0;z-index:100;
+  padding:18px 0;
+  background:transparent;
+}
+.nav{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;max-width:1180px;margin:0 auto;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(16px);
+  border:1px solid var(--line);
+  border-radius:999px;
+  box-shadow:var(--shadow);
+}
+.logo{
+  font-family:'Nunito', sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.01em;
+  background:linear-gradient(135deg, var(--accent-2), var(--accent) 60%, #e0576f);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.logo span{color:var(--accent);-webkit-text-fill-color:var(--accent);}
+.nav-links{display:flex;gap:38px;font-size:13px;font-weight:800;letter-spacing:0.04em;text-transform:uppercase;}
+.nav-links a{color:var(--ink-soft);transition:color .2s;}
+.nav-links a:hover{color:var(--accent);}
+.nav-cta{display:flex;align-items:center;gap:18px;}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 26px;
+  border-radius:999px;
+  font-weight:700;font-size:13px;
+  letter-spacing:0.01em;
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform .2s ease, box-shadow .25s ease, background .2s ease, border-color .2s ease;
+  white-space:nowrap;
+}
+.btn-primary{background:linear-gradient(135deg, var(--accent-2), var(--accent));color:#fff;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(179,34,60,0.32);}
+.btn-outline{background:transparent;border:1px solid var(--line);color:var(--ink);}
+.btn-outline:hover{border-color:var(--accent);background:var(--accent-soft);color:var(--accent-2);}
 
-<main id="top">
+/* Hero */
+.hero{
+  padding:90px 0 60px;
+  display:grid;
+  grid-template-columns:1.1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+.hero h1{font-size:clamp(34px, 4.4vw, 56px);line-height:1.1;margin-bottom:22px;}
+.hero p{font-size:18px;color:var(--ink-soft);max-width:480px;margin-bottom:32px;}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:36px;}
+.hero-stats{display:flex;gap:36px;}
+.hero-stats div{display:flex;flex-direction:column;}
+.hero-stats b{font-size:26px;font-weight:800;}
+.hero-stats span{font-size:13px;color:var(--ink-soft);}
+.hero-visual{
+  position:relative;
+  aspect-ratio:4/5;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow-lg);
+}
+.hero-visual img{width:100%;height:100%;object-fit:cover;}
 
-  <!-- APARTMENTS -->
-  <section id="apartments" class="container" style="padding-top:48px;">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Оренда подобово</div>
-        <h2>Апартаменти у Петропавлівській Борщагівці</h2>
-      </div>
-    </div>
-    <div class="apt-grid">
+/* Trust bar */
+.trust{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  padding:30px 0;
+  background:var(--surface-2);
+}
+.trust .container{
+  display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;
+  color:var(--ink-soft);font-size:14px;font-weight:700;
+}
 
-      <a href="apt5.html" class="apt-card">
-        <div class="apt-photo">
-          <img src="apartments/apt5-1.jpg" alt="Townhouse99">
-          <span class="apt-badge">★ 4,96</span>
-        </div>
-        <div class="apt-body">
-          <h3>Townhouse99</h3>
-          <div class="apt-meta"><span>Таунхаус</span><span>·</span><span>4 гостя</span><span>·</span><span>2 санвузли</span></div>
-          <p class="apt-desc">Найбільший будинок — два поверхи, сауна, барбекю та повна автономність.</p>
-          <div class="apt-foot"><span class="apt-link">Детальніше →</span></div>
-        </div>
-      </a>
+/* Apartments */
+.section-head{
+  display:flex;justify-content:space-between;align-items:flex-end;
+  margin-bottom:44px;gap:24px;flex-wrap:wrap;
+}
+.section-head h2{font-size:clamp(28px,3vw,38px);}
+.section-head p{color:var(--ink-soft);max-width:420px;font-size:15px;}
 
-      <a href="apt1.html" class="apt-card">
-        <div class="apt-photo">
-          <img src="apartments/apt1-1.jpg" alt="House&amp;House 84/1">
-          <span class="apt-badge">★ 5,0</span>
-        </div>
-        <div class="apt-body">
-          <h3>House&amp;House 84/1</h3>
-          <div class="apt-meta"><span>1 спальня</span><span>·</span><span>2 гостя</span><span>·</span><span>1 санвузол</span></div>
-          <p class="apt-desc">Гостьові апартаменти з мінімалістичним стилем — світло, простір і все необхідне для комфорту.</p>
-          <div class="apt-foot"><span class="apt-link">Детальніше →</span></div>
-        </div>
-      </a>
+.apt-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:28px;
+}
+.apt-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:var(--shadow);
+  transition:transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  display:flex;flex-direction:column;
+}
+.apt-card:hover{transform:translateY(-8px);box-shadow:var(--shadow-lg);border-color:var(--accent);}
+.apt-card .apt-photo{aspect-ratio:4/3;overflow:hidden;position:relative;}
+.apt-card .apt-photo img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+.apt-card:hover .apt-photo img{transform:scale(1.06);}
+.apt-badge{
+  position:absolute;top:14px;left:14px;z-index:1;
+  background:rgba(255,255,255,0.92);
+  border:1px solid rgba(255,255,255,0.6);
+  color:var(--accent-2);
+  padding:6px 13px;border-radius:999px;
+  font-size:12px;font-weight:800;
+  display:flex;align-items:center;gap:4px;
+  box-shadow:0 6px 16px rgba(122,20,40,0.18);
+}
+.apt-body{padding:24px 24px 28px;flex:1;display:flex;flex-direction:column;}
+.apt-body h3{font-family:'Nunito', sans-serif;font-weight:800;font-size:20px;margin-bottom:8px;}
+.apt-meta{display:flex;gap:14px;color:var(--ink-soft);font-size:13px;margin-bottom:14px;flex-wrap:wrap;}
+.apt-desc{color:var(--ink-soft);font-size:14px;margin-bottom:20px;flex:1;}
+.apt-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--line);}
+.apt-link{font-size:13px;font-weight:800;color:var(--accent);}
 
-      <a href="apt2.html" class="apt-card">
-        <div class="apt-photo">
-          <img src="apartments/apt2-1.jpg" alt="House&amp;House 84/2">
-          <span class="apt-badge">★ 5,0</span>
-        </div>
-        <div class="apt-body">
-          <h3>House&amp;House 84/2</h3>
-          <div class="apt-meta"><span>Мінібудинок</span><span>·</span><span>2 гостя</span><span>·</span><span>3 ліжка</span></div>
-          <p class="apt-desc">Затишний мінібудинок з окремим робочим місцем — гарний варіант для короткої поїздки чи роботи.</p>
-          <div class="apt-foot"><span class="apt-link">Детальніше →</span></div>
-        </div>
-      </a>
+/* Reviews */
+.review-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:24px;
+}
+.review-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:28px 26px;
+  box-shadow:var(--shadow);
+  display:flex;
+  flex-direction:column;
+  transition:border-color .3s ease, transform .3s ease;
+}
+.review-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+.review-stars{color:var(--accent);font-size:14px;margin-bottom:16px;letter-spacing:3px;}
+.review-quote{font-family:'Nunito', sans-serif;font-weight:700;font-size:16px;line-height:1.55;color:var(--ink);flex:1;margin-bottom:22px;}
+.review-meta{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--ink-soft);border-top:1px solid var(--line);padding-top:16px;}
+.review-meta b{color:var(--ink);font-weight:800;display:block;font-size:14px;}
+.review-apt{font-size:11px;font-weight:800;color:var(--accent);text-transform:uppercase;letter-spacing:0.05em;}
 
-      <a href="apt3.html" class="apt-card">
-        <div class="apt-photo">
-          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-51649371/original/71afcac3-3061-4384-bbeb-4fff6d32c14f.jpeg?im_w=720" alt="House&amp;House 84/3">
-          <span class="apt-badge">★ 4,83</span>
-        </div>
-        <div class="apt-body">
-          <h3>House&amp;House 84/3</h3>
-          <div class="apt-meta"><span>Таунхаус</span><span>·</span><span>2 гостя</span><span>·</span><span>Студія</span></div>
-          <p class="apt-desc">Спокійне помешкання для сімейного відпочинку — тихо, зручно, з пральною машиною.</p>
-          <div class="apt-foot"><span class="apt-link">Детальніше →</span></div>
-        </div>
-      </a>
+/* Why us */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
+.why-card{background:var(--surface-2);border:1px solid var(--line);border-radius:var(--radius);padding:30px 26px;transition:border-color .3s ease, transform .3s ease;}
+.why-card:hover{border-color:var(--accent);transform:translateY(-4px);}
+.why-icon{font-size:26px;margin-bottom:18px;}
+.why-card h3{font-family:'Nunito', sans-serif;font-weight:800;font-size:17px;margin-bottom:10px;}
+.why-card p{font-size:13px;color:var(--ink-soft);line-height:1.6;}
 
-      <a href="apt4.html" class="apt-card">
-        <div class="apt-photo">
-          <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-1541831757637420408/original/8abd07d6-8385-456a-a10d-533d0ea75293.jpeg?im_w=720" alt="House&amp;House 84/4">
-          <span class="apt-badge">Новинка</span>
-        </div>
-        <div class="apt-body">
-          <h3>House&amp;House 84/4</h3>
-          <div class="apt-meta"><span>1 спальня</span><span>·</span><span>2 гостя</span><span>·</span><span>1 санвузол</span></div>
-          <p class="apt-desc">Ця оселя справді унікальна — найновіший апартамент у нашій колекції.</p>
-          <div class="apt-foot"><span class="apt-link">Детальніше →</span></div>
-        </div>
-      </a>
+/* About — numbered blocks (p84-inspired) */
+.about-numbered{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:start;margin-bottom:28px;}
+.about-visual{aspect-ratio:4/5;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-lg);border:1px solid var(--line);}
+.about-visual img{width:100%;height:100%;object-fit:cover;}
+.about-blocks{display:flex;flex-direction:column;}
+.about-block{padding:28px 0;border-top:1px solid var(--line);}
+.about-block:last-child{border-bottom:1px solid var(--line);}
+.about-num{font-size:13px;font-weight:800;color:var(--accent);letter-spacing:0.08em;}
+.about-block h3{font-family:'Nunito', sans-serif;font-weight:800;font-size:20px;margin:10px 0 10px;}
+.about-block p{color:var(--ink-soft);font-size:15px;line-height:1.75;}
 
-    </div>
-  </section>
+/* CTA band */
+.cta-band{
+  position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#7d1428,#b3223c 60%,#d94a63);
+  color:#fff;border-radius:28px;padding:72px 48px;text-align:center;margin:0 28px;
+}
+.cta-band h2{font-size:clamp(28px,3.4vw,42px);margin-bottom:16px;color:#fff;}
+.cta-band p{color:rgba(255,255,255,0.82);margin-bottom:32px;font-size:16px;}
+.cta-actions{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+.cta-band .btn-primary{background:#fff;color:var(--accent-2);}
+.cta-band .btn-primary:hover{box-shadow:0 14px 30px rgba(0,0,0,0.25);}
+.cta-band .btn-outline{border-color:rgba(255,255,255,0.4);color:#fff;}
+.cta-band .btn-outline:hover{background:rgba(255,255,255,0.15);border-color:#fff;color:#fff;}
 
-  <!-- REVIEWS -->
-  <section id="reviews" class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Відгуки гостей</div>
-        <h2>Що кажуть наші гості на Airbnb</h2>
-      </div>
-    </div>
-    <div class="review-grid">
+/* Contact */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contact-list{list-style:none;margin-top:28px;}
+.contact-list li{display:flex;gap:16px;padding:16px 0;border-top:1px solid var(--line);font-size:15px;}
+.contact-list li:last-child{border-bottom:1px solid var(--line);}
+.contact-list b{min-width:120px;color:var(--ink-soft);font-weight:700;font-size:12px;text-transform:uppercase;letter-spacing:0.05em;}
+.contact-list a{color:var(--ink);font-weight:600;transition:color .2s ease;}
+.contact-list a:hover{color:var(--accent);}
+.map-ph{
+  aspect-ratio:1/1;border-radius:var(--radius);
+  border:1px solid var(--line);
+  background:repeating-linear-gradient(45deg, var(--surface), var(--surface) 12px, var(--bg-alt) 12px, var(--bg-alt) 24px);
+  display:flex;flex-direction:column;gap:8px;align-items:center;justify-content:center;
+  color:var(--ink);font-weight:800;font-size:15px;text-align:center;padding:20px;
+  transition:border-color .3s ease, transform .3s ease;
+}
+.map-ph:hover{border-color:var(--accent);transform:translateY(-4px);}
+.map-embed{
+  position:relative;aspect-ratio:1/1;border-radius:var(--radius);
+  overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);
+}
+.map-embed iframe{width:100%;height:100%;border:0;display:block;}
+.map-embed-link{
+  position:absolute;left:16px;bottom:16px;z-index:2;
+  background:#fff;color:var(--ink);font-weight:800;font-size:13px;
+  padding:11px 18px;border-radius:999px;box-shadow:var(--shadow-lg);
+  display:inline-flex;align-items:center;gap:6px;
+  transition:color .2s ease, transform .2s ease;
+}
+.map-embed-link:hover{color:var(--accent);transform:translateY(-2px);}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Світлана як господиня — 100 з 100, все виглядало бездоганно, я відчував себе як удома, рекомендую на 100%.»</p>
-        <div class="review-meta">
-          <div><b>Santiago</b>Нью-Йорк, США</div>
-          <span class="review-apt">Townhouse99</span>
-        </div>
-      </div>
+/* Footer (p84-inspired: dark, columned, watermark) */
+footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;overflow:hidden;margin-top:60px;}
+.footer-grid{
+  display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;
+  padding:72px 0 48px;position:relative;z-index:1;
+}
+.footer-brand .logo{-webkit-text-fill-color:#fff;background:none;color:#fff;}
+.footer-brand .logo span{color:var(--accent);-webkit-text-fill-color:var(--accent);}
+.footer-brand p{margin-top:16px;font-size:14px;color:rgba(243,217,217,0.7);max-width:260px;line-height:1.65;}
+.footer-social{margin-top:20px;display:flex;gap:10px;flex-wrap:wrap;}
+.footer-social a{font-size:12px;font-weight:700;color:var(--footer-ink);border:1px solid var(--footer-line);padding:8px 16px;border-radius:999px;transition:border-color .2s, color .2s;}
+.footer-social a:hover{border-color:var(--accent);color:#fff;}
+.footer-col h4{text-transform:uppercase;letter-spacing:0.14em;font-size:11px;font-weight:800;color:rgba(243,217,217,0.5);margin-bottom:18px;}
+.footer-col a,.footer-col span{display:block;font-size:14px;color:var(--footer-ink);margin-bottom:12px;opacity:.85;}
+.footer-col a:hover{color:#fff;opacity:1;}
+.footer-watermark{
+  font-family:'Nunito', sans-serif;font-weight:800;
+  font-size:min(20vw, 200px);line-height:0.8;
+  color:rgba(255,255,255,0.045);
+  white-space:nowrap;text-align:right;
+  padding:0 20px;user-select:none;pointer-events:none;
+  position:relative;z-index:0;
+}
+.footer-bottom{
+  border-top:1px solid var(--footer-line);
+  padding:22px 0;font-size:13px;color:rgba(243,217,217,0.55);
+  position:relative;z-index:1;
+}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Світлана привітна, ввічлива господиня. Будинок охайний і чистий. Затишне помешкання. Поряд супермаркет «Новус». Дякую за гостинність.»</p>
-        <div class="review-meta">
-          <div><b>Станіслав</b>7 років на Airbnb</div>
-          <span class="review-apt">Townhouse99</span>
-        </div>
-      </div>
+/* Breadcrumb (detail pages) */
+.breadcrumb{padding:24px 0 0;font-size:13px;color:var(--ink-soft);}
+.breadcrumb a{color:var(--ink-soft);}
+.breadcrumb a:hover{color:var(--accent);}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Світлана — чудова господиня, яка завжди готова допомогти! Магазини та ресторани на відстані пішої прогулянки. Загалом я дуже задоволений!»</p>
-        <div class="review-meta">
-          <div><b>Domagoj</b>13 років на Airbnb</div>
-          <span class="review-apt">House&amp;House 84/1</span>
-        </div>
-      </div>
+/* Gallery (detail pages) */
+.gallery{
+  display:grid;
+  grid-template-columns:1.4fr 1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:10px;
+  border-radius:var(--radius);
+  overflow:hidden;
+  height:520px;
+  margin-top:24px;
+  border:1px solid var(--line);
+}
+.gallery a{display:block;height:100%;overflow:hidden;cursor:pointer;position:relative;}
+.gallery img{width:100%;height:100%;object-fit:cover;transition:transform .4s ease;}
+.gallery a:hover img{transform:scale(1.04);}
+.gallery a:first-child{grid-row:span 2;}
+.gallery-more-badge{
+  position:absolute;inset:0;
+  background:rgba(58,16,21,0.6);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--white);font-weight:800;font-size:15px;
+  backdrop-filter:blur(2px);
+}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Дуже приємне місце для перебування в Києві! Студія чиста, охайна, було комфортно. Господарка Світлана привітна і завжди на зв'язку. Однозначно рекомендую!»</p>
-        <div class="review-meta">
-          <div><b>Karyna</b>Харків, Україна</div>
-          <span class="review-apt">House&amp;House 84/2</span>
-        </div>
-      </div>
+/* Detail info */
+.detail-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:60px;margin-top:56px;align-items:start;}
+.detail-title{font-size:clamp(28px,3.4vw,42px);margin-bottom:12px;}
+.detail-meta{display:flex;gap:16px;color:var(--ink-soft);font-size:15px;flex-wrap:wrap;margin-bottom:18px;}
+.detail-rating{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:15px;margin-bottom:28px;color:var(--accent);}
+.detail-rating span{color:var(--ink-soft);font-weight:500;}
+.detail-desc{font-size:16px;color:var(--ink-soft);white-space:pre-line;margin-bottom:36px;line-height:1.75;}
+.detail-desc + h3, .amenities-title{font-family:'Nunito', sans-serif;font-weight:800;font-size:19px;margin-bottom:20px;}
+.amenities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px;}
+.amenity{display:flex;gap:8px;align-items:center;font-size:15px;}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Я проживав у цих апартаментах три місяці — це був справді чудовий досвід. Чисте, затишне та дуже комфортне помешкання для тривалого перебування. Дуже рекомендую!»</p>
-        <div class="review-meta">
-          <div><b>Екатерина</b>Остін, Техас</div>
-          <span class="review-apt">House&amp;House 84/3</span>
-        </div>
-      </div>
+.booking-card{
+  background:var(--surface);
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow-lg);
+  padding:30px;
+  position:sticky;top:110px;
+}
+.booking-card .host{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.booking-card .host img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:1px solid var(--line);}
+.booking-card .host div b{display:block;font-size:15px;}
+.booking-card .host div span{font-size:13px;color:var(--ink-soft);}
+.booking-card .btn{width:100%;margin-bottom:10px;}
+.booking-note{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
 
-      <div class="review-card">
-        <div class="review-stars">★★★★★</div>
-        <p class="review-quote">«Комфортне помешкання, гарячий душ з хорошим тиском води, гарне розташування. Світлана дуже привітна і добра, навіть позичила мені вентилятор для додаткового комфорту.»</p>
-        <div class="review-meta">
-          <div><b>Jonathan</b>3 місяці на Airbnb</div>
-          <span class="review-apt">House&amp;House 84/3</span>
-        </div>
-      </div>
+/* Lightbox */
+.lightbox{
+  position:fixed;inset:0;background:rgba(24,6,9,0.9);
+  display:none;align-items:center;justify-content:center;z-index:1000;padding:32px;
+}
+.lightbox.open{display:flex;}
+.lightbox img{max-width:100%;max-height:88vh;border-radius:16px;}
+.lightbox-close{
+  position:absolute;top:24px;right:32px;color:#fff;font-size:28px;
+  background:none;border:none;cursor:pointer;
+}
+.lightbox-nav{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:rgba(255,255,255,0.2);border:none;color:#fff;
+  width:48px;height:48px;border-radius:50%;font-size:20px;cursor:pointer;
+}
+.lightbox-prev{left:24px;}
+.lightbox-next{right:24px;}
 
-    </div>
-  </section>
-
-  <!-- WHY US -->
-  <section id="why" class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Чому обирають нас</div>
-        <h2>Комфорт без компромісів</h2>
-      </div>
-    </div>
-    <div class="why-grid">
-      <div class="why-card">
-        <div class="why-icon">🔑</div>
-        <h3>Легке заселення</h3>
-        <p>Самостійне заселення у зручний час, без очікування та зайвих формальностей.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🧼</div>
-        <h3>Ідеальна чистота</h3>
-        <p>Прибирання та заміна білизни перед кожним заїздом — особисто перевіряємо кожну деталь.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">🐾</div>
-        <h3>Раді тваринам</h3>
-        <p>Усі наші апартаменти pet-friendly — берiть улюбленців із собою.</p>
-      </div>
-      <div class="why-card">
-        <div class="why-icon">💬</div>
-        <h3>Особистий підхід</h3>
-        <p>Родинний бізнес — ми на зв'язку та відповідаємо протягом години.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section id="about" class="container">
-    <div class="section-head">
-      <div>
-        <div class="eyebrow">Про нас</div>
-        <h2>Родинна справа з увагою до деталей</h2>
-      </div>
-    </div>
-    <div class="about-numbered">
-      <div class="about-visual">
-        <img src="https://a0.muscache.com/im/pictures/user/5ea9ebe9-db52-4e62-8965-5c19a23dc1ba.jpg?im_w=600" alt="Світлана — господиня">
-      </div>
-      <div class="about-blocks">
-        <div class="about-block">
-          <span class="about-num">01</span>
-          <h3>Про господиню</h3>
-          <p>Мене звати Світлана, я мама трьох дітей і вже 8 років приймаю гостей у Петропавлівській Борщагівці. За цей час назбиралося 94 відгуки із середнім рейтингом 4,95 із 5.</p>
-        </div>
-        <div class="about-block">
-          <span class="about-num">02</span>
-          <h3>Про апартаменти</h3>
-          <p>Кожен із п'яти апартаментів облаштовувала особисто, тож знаю в них кожну дрібницю. Для мене важливо, щоб гість почувався як удома — чисто, тихо, зручно і без зайвого клопоту.</p>
-        </div>
-      </div>
-    </div>
-    <a href="#contact" class="btn btn-outline">Написати нам</a>
-  </section>
-
-  <!-- CTA -->
-  <section>
-    <div class="cta-band">
-      <h2>Готові забронювати свою добу затишку?</h2>
-      <p>Напишіть нам у Telegram або зателефонуйте — підберемо вільний апартамент під ваші дати.</p>
-      <div class="cta-actions">
-        <a href="https://t.me/svitlanka46" class="btn btn-primary" target="_blank" rel="noopener">Написати в Telegram</a>
-        <a href="tel:+380671287502" class="btn btn-outline">Зателефонувати</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="container">
-    <div class="contact-grid">
-      <div>
-        <div class="eyebrow">Контакти</div>
-        <h2 style="font-size:32px;margin-bottom:8px;">Завжди на зв'язку</h2>
-        <p style="color:var(--ink-soft);">Оберіть зручний спосіб зв'язку — відповідаємо протягом години.</p>
-        <ul class="contact-list">
-          <li><b>Телефон</b><span><a href="tel:+380671287502">+380 67 128 75 02</a></span></li>
-          <li><b>Telegram</b><span><a href="https://t.me/svitlanka46" target="_blank" rel="noopener">@svitlanka46</a></span></li>
-          <li><b>Email</b><span><a href="mailto:svetlanka46@gmail.com">svetlanka46@gmail.com</a></span></li>
-          <li><b>Адреса</b><span>с. Петропавлівська Борщагівка, Київська область</span></li>
-        </ul>
-      </div>
-      <div class="map-embed">
-        <iframe src="https://www.google.com/maps?q=%D0%90%D0%BF%D0%B0%D1%80%D1%82%D0%B0%D0%BC%D0%B5%D0%BD%D1%82%D0%B8+Townhouse99,+%D0%B2%D1%83%D0%BB%D0%B8%D1%86%D1%8F+%D0%9C%D0%B8%D1%80%D1%83,+74,+%D0%9F%D0%B5%D1%82%D1%80%D0%BE%D0%BF%D0%B0%D0%B2%D0%BB%D1%96%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%91%D0%BE%D1%80%D1%89%D0%B0%D0%B3%D1%96%D0%B2%D0%BA%D0%B0,+%D0%9A%D0%B8%D1%97%D0%B2%D1%81%D1%8C%D0%BA%D0%B0+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen title="Townhouse99 на карті"></iframe>
-        <a href="https://maps.app.goo.gl/isynpmJGHU14vodaA?g_st=ic" target="_blank" rel="noopener" class="map-embed-link">📍 Відкрити на Google Maps</a>
-      </div>
-    </div>
-  </section>
-
-</main>
-
-<footer>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#top" class="logo">TownHouse99</a>
-      <p>Родинна оренда апартаментів подобово в Петропавлівській Борщагівці, Київська область.</p>
-      <div class="footer-social">
-        <a href="https://t.me/svitlanka46" target="_blank" rel="noopener">Telegram</a>
-        <a href="tel:+380671287502">Телефон</a>
-      </div>
-    </div>
-    <div class="footer-col">
-      <h4>Навігація</h4>
-      <a href="#apartments">Апартаменти</a>
-      <a href="#about">Про нас</a>
-      <a href="#reviews">Відгуки</a>
-      <a href="#contact">Контакти</a>
-    </div>
-    <div class="footer-col">
-      <h4>Контакти</h4>
-      <a href="tel:+380671287502">+380 67 128 75 02</a>
-      <a href="mailto:svetlanka46@gmail.com">svetlanka46@gmail.com</a>
-      <span>с. Петропавлівська Борщагівка</span>
-    </div>
-    <div class="footer-col">
-      <h4>Гарантії</h4>
-      <span>Перевірені господарі</span>
-      <span>Чисто перед кожним заїздом</span>
-      <span>Особистий зв'язок 24/7</span>
-    </div>
-  </div>
-  <div class="footer-watermark">TOWNHOUSE99</div>
-  <div class="container footer-bottom">© 2026 TownHouse99. Родинна оренда апартаментів подобово.</div>
-</footer>
-
-</body>
-</html>
+@media (max-width:960px){
+  .hero{grid-template-columns:1fr;}
+  .hero-visual{order:-1;aspect-ratio:16/10;}
+  .apt-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .review-grid{grid-template-columns:repeat(2,1fr);}
+  .about-numbered{grid-template-columns:1fr;}
+  .about-visual{aspect-ratio:16/9;}
+  .contact-grid{grid-template-columns:1fr;}
+  .nav-links{display:none;}
+  .detail-layout{grid-template-columns:1fr;}
+  .booking-card{position:static;}
+  .gallery{grid-template-columns:1fr 1fr;grid-template-rows:auto;height:auto;}
+  .gallery a{aspect-ratio:4/3;height:auto;}
+  .gallery a:first-child{grid-column:span 2;grid-row:auto;}
+  .footer-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:600px){
+  section{padding:64px 0;}
+  .apt-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:1fr;}
+  .review-grid{grid-template-columns:1fr;}
+  .cta-band{padding:44px 24px;margin:0 16px;}
+  .nav-cta .btn-outline{display:none;}
+  .amenities-grid{grid-template-columns:1fr;}
+  .gallery{grid-template-columns:1fr;}
+  .gallery a:first-child{grid-column:auto;}
+  .footer-grid{grid-template-columns:1fr;padding:56px 0 32px;}
+  .footer-watermark{font-size:22vw;text-align:left;padding-left:8px;}
+}
