@@ -334,6 +334,24 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .booking-card .btn{width:100%;margin-bottom:10px;}
 .booking-note{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
 
+/* Contact menu (Telegram / Viber / WhatsApp) */
+.contact-menu{position:relative;}
+.contact-menu summary{list-style:none;cursor:pointer;}
+.contact-menu summary::-webkit-details-marker{display:none;}
+.contact-menu summary::after{content:'▾';margin-left:8px;font-size:10px;}
+.contact-menu[open] summary::after{content:'▴';}
+.contact-menu-list{
+  position:absolute;left:0;right:0;top:calc(100% + 8px);
+  background:var(--surface);border:1px solid var(--line);border-radius:16px;
+  box-shadow:var(--shadow-lg);padding:8px;z-index:20;
+  display:flex;flex-direction:column;gap:2px;
+}
+.contact-menu-list a{
+  display:flex;align-items:center;padding:10px 14px;border-radius:10px;
+  font-size:13px;font-weight:700;color:var(--ink);transition:background .15s ease,color .15s ease;
+}
+.contact-menu-list a:hover{background:var(--accent-soft);color:var(--accent-2);}
+
 /* Booking calendar modal */
 .cal-modal{
   position:fixed;inset:0;background:rgba(24,6,9,0.55);
@@ -346,11 +364,13 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
   box-shadow:var(--shadow-lg);
 }
 .cal-modal-close{
-  position:absolute;top:16px;right:16px;background:none;border:none;
-  font-size:20px;color:var(--ink-soft);cursor:pointer;line-height:1;
-  width:32px;height:32px;border-radius:50%;transition:background .2s ease,color .2s ease;
+  position:absolute;top:-16px;right:-16px;background:var(--surface);border:1px solid var(--line);
+  font-size:16px;color:var(--ink-soft);cursor:pointer;line-height:1;
+  width:36px;height:36px;border-radius:50%;transition:background .2s ease,color .2s ease,border-color .2s ease;
+  box-shadow:var(--shadow);z-index:2;
+  display:flex;align-items:center;justify-content:center;
 }
-.cal-modal-close:hover{background:var(--accent-soft);color:var(--accent-2);}
+.cal-modal-close:hover{background:var(--accent-soft);color:var(--accent-2);border-color:var(--accent);}
 
 /* Booking calendar */
 .booking-calendar{margin-top:0;}
@@ -383,7 +403,10 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .cal-dot-busy{background:var(--bg-alt);border:1px solid #c7b3b3;}
 .cal-dot-sel{background:var(--accent);}
 .cal-summary{font-size:13px;font-weight:700;margin-top:16px;color:var(--ink);}
-.cal-book-btn{width:100%;margin-top:12px;}
+.cal-book-actions{margin-top:14px;}
+.cal-book-label{font-size:12px;font-weight:700;color:var(--ink-soft);margin-bottom:8px;}
+.cal-book-links{display:flex;gap:8px;flex-wrap:wrap;}
+.cal-book-links .btn{width:auto;flex:1;padding:10px 12px;font-size:12px;margin-bottom:0;}
 .cal-note{font-size:11.5px;color:var(--ink-soft);margin-top:10px;line-height:1.5;}
 @media (max-width:520px){
   .cal-grids{grid-template-columns:1fr;}
