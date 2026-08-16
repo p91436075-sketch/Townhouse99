@@ -231,7 +231,7 @@ header{
 
 /* CTA band */
 .cta-band{
-  position:relative;overflow:hidden;
+  position:relative;
   background:linear-gradient(135deg,#7d1428,#b3223c 60%,#d94a63);
   color:#fff;border-radius:28px;padding:72px 48px;text-align:center;margin:0 28px;
 }
@@ -483,7 +483,8 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
   .logo{font-size:19px;}
   .apt-grid{grid-template-columns:1fr;}
   .why-grid{grid-template-columns:1fr;}
-  .review-grid{grid-template-columns:1fr;}
+  .review-grid{display:none;}
+  .about-visual{display:none;}
   .cta-band{padding:40px 22px;margin:0 12px;border-radius:22px;}
   .amenities-grid{grid-template-columns:1fr;}
   .gallery{grid-template-columns:1fr 1fr;gap:8px;height:auto;}
