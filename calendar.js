@@ -1,10 +1,14 @@
 /* Календар вільних дат — читає /api/availability?apt=... і дає обрати
-   дати заїзду/виїзду. Після вибору формує посилання в Telegram з готовим
-   текстом повідомлення (бронювання підтверджує господар вручну). */
+   дати заїзду/виїзду. Відкривається у спливному вікні за кнопкою
+   "Переглянути вільні дати". Після вибору формує посилання в Telegram
+   з готовим текстом повідомлення (бронювання підтверджує господар вручну). */
 
 (function () {
   const root = document.getElementById("bookingCalendar");
-  if (!root) return;
+  const openBtn = document.getElementById("openCalendarBtn");
+  const modal = document.getElementById("calModal");
+  const closeBtn = document.getElementById("calModalClose");
+  if (!root || !openBtn || !modal) return;
 
   const apt = root.dataset.apt;
   const aptName = root.dataset.aptName || "";
@@ -15,6 +19,7 @@
 
   let blocked = [];
   let configured = true;
+  let loaded = false;
   let viewYear, viewMonth; // місяць що показуємо першим (0-based)
   let selStart = null, selEnd = null;
 
@@ -101,7 +106,6 @@
   }
 
   function renderGrids(){
-    document.getElementById("calMonths").textContent = "";
     const grids = document.getElementById("calGrids");
     let m1 = viewMonth, y1 = viewYear;
     let m2 = m1+1, y2 = y1;
@@ -161,5 +165,18 @@
     renderGrids();
   }
 
-  load();
+  function openModal(){
+    modal.classList.add("open");
+    document.body.style.overflow = "hidden";
+    if (!loaded) { loaded = true; load(); }
+  }
+  function closeModal(){
+    modal.classList.remove("open");
+    document.body.style.overflow = "";
+  }
+
+  openBtn.addEventListener("click", openModal);
+  if (closeBtn) closeBtn.addEventListener("click", closeModal);
+  modal.addEventListener("click", (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") closeModal(); });
 })();
