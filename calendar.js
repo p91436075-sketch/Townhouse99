@@ -12,7 +12,7 @@
 
   const apt = root.dataset.apt;
   const aptName = root.dataset.aptName || "";
-  const telegramUser = root.dataset.telegram || "svitlanka46";
+  const PHONE = "380673297848"; // Telegram, Viber, WhatsApp — один номер
 
   const MONTHS_UA = ["Січень","Лютий","Березень","Квітень","Травень","Червень","Липень","Серпень","Вересень","Жовтень","Листопад","Грудень"];
   const WEEKDAYS_UA = ["Пн","Вт","Ср","Чт","Пт","Сб","Нд"];
@@ -61,7 +61,14 @@
         <span><i class="cal-dot cal-dot-sel"></i>Обрано</span>
       </div>
       <div class="cal-summary" id="calSummary">Оберіть дату заїзду та виїзду</div>
-      <a href="#" target="_blank" rel="noopener" class="btn btn-primary cal-book-btn hidden" id="calBookBtn">Забронювати ці дати в Telegram</a>
+      <div class="cal-book-actions hidden" id="calBookActions">
+        <div class="cal-book-label">Забронювати ці дати:</div>
+        <div class="cal-book-links">
+          <a href="#" target="_blank" rel="noopener" class="btn btn-primary" id="calBookTg">Telegram</a>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-outline" id="calBookWa">WhatsApp</a>
+          <a href="#" target="_blank" rel="noopener" class="btn btn-outline" id="calBookVb">Viber</a>
+        </div>
+      </div>
       <div class="cal-note" id="calNote"></div>
     `;
     document.getElementById("calPrev").onclick = () => { shiftMonth(-1); renderGrids(); };
@@ -133,19 +140,21 @@
 
   function updateSummary(){
     const summary = document.getElementById("calSummary");
-    const btn = document.getElementById("calBookBtn");
+    const actions = document.getElementById("calBookActions");
     if (selStart && selEnd) {
       const nights = Math.round((new Date(selEnd) - new Date(selStart)) / 86400000);
       summary.innerHTML = `Заїзд: <b>${toUA(new Date(selStart))}</b> → Виїзд: <b>${toUA(new Date(selEnd))}</b> (${nights} ${nights===1?"ніч":(nights<5?"ночі":"ночей")})`;
       const text = encodeURIComponent(`Вітаю! Хочу забронювати ${aptName || apt} з ${toUA(new Date(selStart))} по ${toUA(new Date(selEnd))} (${nights} ${nights===1?"ніч":(nights<5?"ночі":"ночей")}). Підкажіть, будь ласка, чи вільні ці дати?`);
-      btn.href = `https://t.me/${telegramUser}?text=${text}`;
-      btn.classList.remove("hidden");
+      document.getElementById("calBookTg").href = `https://t.me/+${PHONE}?text=${text}`;
+      document.getElementById("calBookWa").href = `https://wa.me/${PHONE}?text=${text}`;
+      document.getElementById("calBookVb").href = `viber://chat?number=%2B${PHONE}`;
+      actions.classList.remove("hidden");
     } else if (selStart) {
       summary.innerHTML = `Заїзд: <b>${toUA(new Date(selStart))}</b> — тепер оберіть дату виїзду`;
-      btn.classList.add("hidden");
+      actions.classList.add("hidden");
     } else {
       summary.textContent = "Оберіть дату заїзду та виїзду";
-      btn.classList.add("hidden");
+      actions.classList.add("hidden");
     }
   }
 
