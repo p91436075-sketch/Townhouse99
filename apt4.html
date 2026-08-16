@@ -66,8 +66,15 @@
         <div><b>Світлана</b><span>Супергосподар · 8 років прийому гостей</span></div>
       </div>
       <a href="https://t.me/svitlanka46" target="_blank" rel="noopener" class="btn btn-outline">Написати в Telegram</a>
-      <div class="booking-calendar" id="bookingCalendar" data-apt="apt4" data-apt-name="House&amp;House 84/4" data-telegram="svitlanka46"></div>
+      <button type="button" class="btn btn-primary" id="openCalendarBtn">Переглянути вільні дати</button>
     </aside>
+
+    <div class="cal-modal" id="calModal">
+      <div class="cal-modal-inner">
+        <button type="button" class="cal-modal-close" id="calModalClose">✕</button>
+        <div class="booking-calendar" id="bookingCalendar" data-apt="apt4" data-apt-name="House&amp;House 84/4" data-telegram="svitlanka46"></div>
+      </div>
+    </div>
   </div>
 </main>
 
