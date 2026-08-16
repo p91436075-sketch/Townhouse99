@@ -61,6 +61,15 @@
 .show-more{display:block;margin:36px auto 0;}
 .hidden{display:none !important;}
 .load-wrap{text-align:center;margin-top:40px;}
+@media (max-width:900px){
+  .rgrid{grid-template-columns:repeat(2,1fr);}
+}
+@media (max-width:600px){
+  .rgrid{grid-template-columns:1fr;}
+  .reviews-hero{padding:32px 0 8px;}
+  .reviews-stats{gap:22px;}
+  .filters{margin:28px 0 6px;}
+}
 </style>
 </head>
 <body>
@@ -75,8 +84,20 @@
     </nav>
     <div class="nav-cta">
       <a href="tel:+380673297848" class="btn btn-outline">+380 67 329 78 48</a>
-      <a href="index.html#contact" class="btn btn-primary">Забронювати</a>
     </div>
+    <details class="nav-mobile">
+      <summary aria-label="Меню">☰</summary>
+      <div class="nav-mobile-panel">
+        <a href="index.html#about">Про нас</a>
+        <a href="index.html#reviews">Відгуки</a>
+        <a href="index.html#contact">Контакти</a>
+        <div class="nav-mobile-divider"></div>
+        <a href="tel:+380673297848">Зателефонувати</a>
+        <a href="https://t.me/+380673297848" target="_blank" rel="noopener">Telegram</a>
+        <a href="https://uri.viber.com/add?number=380673297848" target="_blank" rel="noopener">Viber</a>
+        <a href="https://wa.me/380673297848" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </details>
   </div>
 </header>
 
@@ -109,7 +130,7 @@
       <p>Родинна оренда апартаментів подобово в Петропавлівській Борщагівці, Київська область.</p>
       <div class="footer-social">
         <a href="https://t.me/+380673297848" target="_blank" rel="noopener">Telegram</a>
-        <a href="viber://chat?number=%2B380673297848" target="_blank" rel="noopener">Viber</a>
+        <a href="https://uri.viber.com/add?number=380673297848" target="_blank" rel="noopener">Viber</a>
         <a href="https://wa.me/380673297848" target="_blank" rel="noopener">WhatsApp</a>
         <a href="tel:+380673297848">Телефон</a>
       </div>
