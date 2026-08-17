@@ -41,7 +41,7 @@
 <main class="container">
   <div class="breadcrumb"><a href="index.html">Головна</a> / <a href="index.html#apartments">Апартаменти</a> / Townhouse99</div>
 
-  <div class="gallery">
+  <div class="gallery" data-photos-var="mainPhotos">
     <a href="#"><img src="apartments/apt5-house-1.jpg" alt="Townhouse99 — будинок ззовні"></a>
     <a href="#"><img src="apartments/apt5-house-2.jpg" alt="Townhouse99 — передпокій"></a>
     <a href="#"><img src="apartments/apt5-house-3.jpg" alt="Townhouse99 — вітальня"></a>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="detail-layout">
-    <div>
+    <div class="detail-head">
       <h1 class="detail-title">Townhouse99</h1>
       <div class="detail-meta">
         <span>Таунхаус цілком</span>
@@ -61,7 +61,9 @@
       </div>
       <div class="detail-rating">★ 4,96 <span>· 107 відгуків (Airbnb + Booking.com) · Petropavlivs'ka Borshchahivka</span></div>
       <div class="detail-price">2200 грн<span> / доба</span></div>
+    </div>
 
+    <div class="detail-body">
       <p class="detail-desc">Двоповерховий таунхаус з усіма зручностями, розташований у передмісті Києва за 5 хв на машині від метро Житомирська. Зручна транспортна розв'язка, все необхідне для комфортного проживання: кондиціонер, тепла підлога, Wi-Fi, телевізор. На закритій території є місце для барбекю з мангалом.
 
 На першому поверсі — кухня-студія та вітальня з великим диваном (розкладається на два спальних місця) і виходом на подвір'я. На другому поверсі — простора спальня з двоспальним ліжком і балконом з видом на ліс та церкву. На кожному поверсі є ванна кімната з душем. Гостям доступні пральна машина та праска.
@@ -146,7 +148,7 @@
 </div>
 
 <script>
-const photos = [
+const mainPhotos = [
   "apartments/apt5-house-1.jpg",
   "apartments/apt5-house-2.jpg",
   "apartments/apt5-house-3.jpg",
