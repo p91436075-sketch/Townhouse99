@@ -186,6 +186,8 @@ header{
 .apt-desc{color:var(--ink-soft);font-size:14px;margin-bottom:20px;flex:1;}
 .apt-foot{display:flex;justify-content:space-between;align-items:center;padding-top:16px;border-top:1px solid var(--line);}
 .apt-link{font-size:13px;font-weight:800;color:var(--accent);}
+.apt-price{font-size:15px;font-weight:800;color:var(--ink);}
+.apt-price span{font-size:12px;font-weight:600;color:var(--ink-soft);}
 
 /* Reviews */
 .review-grid{
@@ -338,6 +340,8 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .detail-meta{display:flex;gap:16px;color:var(--ink-soft);font-size:15px;flex-wrap:wrap;margin-bottom:18px;}
 .detail-rating{display:inline-flex;align-items:center;gap:6px;font-weight:800;font-size:15px;margin-bottom:28px;color:var(--accent);}
 .detail-rating span{color:var(--ink-soft);font-weight:500;}
+.detail-price{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:20px;}
+.detail-price span{font-size:14px;font-weight:600;color:var(--ink-soft);}
 .detail-desc{font-size:16px;color:var(--ink-soft);white-space:pre-line;margin-bottom:36px;line-height:1.75;}
 .detail-desc + h3, .amenities-title{font-family:'Nunito', sans-serif;font-weight:800;font-size:19px;margin-bottom:20px;}
 .amenities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px;}
@@ -356,6 +360,8 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .booking-card .host div b{display:block;font-size:15px;}
 .booking-card .host div span{font-size:13px;color:var(--ink-soft);}
 .booking-card .btn{width:100%;margin-bottom:10px;}
+.booking-price{font-size:28px;font-weight:800;color:var(--ink);margin-bottom:18px;}
+.booking-price span{font-size:14px;font-weight:600;color:var(--ink-soft);}
 .booking-note{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
 
 /* Contact menu (Telegram / Viber / WhatsApp) */
@@ -482,7 +488,7 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
   .nav{padding:14px 18px;}
   .logo{font-size:19px;}
   .apt-grid{grid-template-columns:1fr;}
-  .why-grid{grid-template-columns:1fr;}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
   .review-grid{display:none;}
   .about-visual{display:none;}
   .cta-band{padding:40px 22px;margin:0 12px;border-radius:22px;}
@@ -495,6 +501,13 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
   .contact-list li{flex-direction:column;gap:4px;}
   .contact-list b{min-width:0;}
   .section-head{margin-bottom:28px;}
+  #why{padding-top:96px;}
+  #about{padding-top:96px;}
+  .why-grid{gap:12px;}
+  .why-card{padding:18px 18px;border-radius:16px;}
+  .why-icon{font-size:18px;margin-bottom:8px;}
+  .why-card h3{font-size:14.5px;margin-bottom:5px;}
+  .why-card p{font-size:12px;line-height:1.5;}
   .hero-stats{gap:24px;flex-wrap:wrap;}
   .cal-modal{padding:12px;}
   .cal-modal-inner{padding:22px;border-radius:18px;}
