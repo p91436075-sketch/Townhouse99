@@ -41,7 +41,7 @@
 <main class="container">
   <div class="breadcrumb"><a href="index.html">Головна</a> / <a href="index.html#apartments">Апартаменти</a> / House&amp;House 84/4</div>
 
-  <div class="gallery">
+  <div class="gallery" data-photos-var="mainPhotos">
     <a href="#"><img src="apartments/apt4-1.jpg" alt="House&amp;House 84/4 — кімната"></a>
     <a href="#"><img src="apartments/apt4-2.jpg" alt="House&amp;House 84/4 — ліжко"></a>
     <a href="#"><img src="apartments/apt4-5.jpg" alt="House&amp;House 84/4 — кухня-куточок"></a>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="detail-layout">
-    <div>
+    <div class="detail-head">
       <h1 class="detail-title">House&amp;House 84/4</h1>
       <div class="detail-meta">
         <span>2 гостя</span>
@@ -60,11 +60,13 @@
       </div>
       <div class="detail-rating"><span>Новий апартамент · відгуків поки немає · Petropavlivska Borshchahivka</span></div>
       <div class="detail-price">1100 грн<span> / доба</span></div>
+    </div>
 
+    <div class="detail-body">
       <p class="detail-desc">Затишний мінібудинок з кухонним куточком і двоспальним ліжком — гарний варіант для короткої поїздки чи роботи на відстані. У санвузлі — душ і пральна машина.</p>
 
       <h3 class="street-title">Вигляд з вулиці</h3>
-      <div class="gallery street-gallery">
+      <div class="gallery street-gallery" data-photos-var="streetPhotos">
         <a href="#"><img src="apartments/street-1.jpg" alt="Вулиця біля House&amp;House 84"></a>
         <a href="#"><img src="apartments/street-2.jpg" alt="Ворота House&amp;House 84"></a>
         <a href="#"><img src="apartments/street-3.jpg" alt="Внутрішнє подвір'я House&amp;House 84"></a>
@@ -150,14 +152,16 @@
 </div>
 
 <script>
-const photos = [
+const mainPhotos = [
   "apartments/apt4-1.jpg",
   "apartments/apt4-2.jpg",
   "apartments/apt4-5.jpg",
   "apartments/apt4-7.jpg",
   "apartments/apt4-3.jpg",
   "apartments/apt4-4.jpg",
-  "apartments/apt4-6.jpg",
+  "apartments/apt4-6.jpg"
+];
+const streetPhotos = [
   "apartments/street-1.jpg",
   "apartments/street-2.jpg",
   "apartments/street-3.jpg",
