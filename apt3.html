@@ -41,7 +41,7 @@
 <main class="container">
   <div class="breadcrumb"><a href="index.html">Головна</a> / <a href="index.html#apartments">Апартаменти</a> / House&amp;House 84/3</div>
 
-  <div class="gallery">
+  <div class="gallery" data-photos-var="mainPhotos">
     <a href="#"><img src="apartments/apt3-1.jpg" alt="House&amp;House 84/3 — кімната"></a>
     <a href="#"><img src="apartments/apt3-2.jpg" alt="House&amp;House 84/3 — ліжко"></a>
     <a href="#"><img src="apartments/apt3-3.jpg" alt="House&amp;House 84/3 — кухня-куточок"></a>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="detail-layout">
-    <div>
+    <div class="detail-head">
       <h1 class="detail-title">House&amp;House 84/3</h1>
       <div class="detail-meta">
         <span>2 гостя</span>
@@ -60,11 +60,13 @@
       </div>
       <div class="detail-rating">★ 4,83 <span>· 23 відгуки · Вибір гостей, топ-10% · Petropavlivska Borshchahivka</span></div>
       <div class="detail-price">1100 грн<span> / доба</span></div>
+    </div>
 
+    <div class="detail-body">
       <p class="detail-desc">Затишний мінібудинок з кухонним куточком і двоспальним ліжком, є пральна машина — гарний варіант для короткої поїздки чи роботи на відстані. У санвузлі — душова кабіна.</p>
 
       <h3 class="street-title">Вигляд з вулиці</h3>
-      <div class="gallery street-gallery">
+      <div class="gallery street-gallery" data-photos-var="streetPhotos">
         <a href="#"><img src="apartments/street-1.jpg" alt="Вулиця біля House&amp;House 84"></a>
         <a href="#"><img src="apartments/street-2.jpg" alt="Ворота House&amp;House 84"></a>
         <a href="#"><img src="apartments/street-3.jpg" alt="Внутрішнє подвір'я House&amp;House 84"></a>
@@ -150,12 +152,14 @@
 </div>
 
 <script>
-const photos = [
+const mainPhotos = [
   "apartments/apt3-1.jpg",
   "apartments/apt3-2.jpg",
   "apartments/apt3-3.jpg",
   "apartments/apt3-4.jpg",
-  "apartments/apt3-5.jpg",
+  "apartments/apt3-5.jpg"
+];
+const streetPhotos = [
   "apartments/street-1.jpg",
   "apartments/street-2.jpg",
   "apartments/street-3.jpg",
