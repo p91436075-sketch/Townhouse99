@@ -334,6 +334,21 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
   backdrop-filter:blur(2px);
 }
 
+/* Street view gallery (separate block) */
+.street-title{font-family:'Nunito', sans-serif;font-weight:800;font-size:19px;margin:32px 0 16px;}
+.gallery.street-gallery{
+  grid-template-columns:repeat(4,1fr);
+  grid-template-rows:auto;
+  height:auto;
+  gap:10px;
+  margin-top:0;
+}
+.gallery.street-gallery a{aspect-ratio:1/1;height:auto;}
+.gallery.street-gallery a:first-child{grid-row:auto;grid-column:auto;}
+@media (max-width:600px){
+  .gallery.street-gallery{grid-template-columns:repeat(3,1fr);gap:8px;}
+}
+
 /* Detail info */
 .detail-layout{display:grid;grid-template-columns:1.5fr 1fr;gap:60px;margin-top:56px;align-items:start;}
 .detail-title{font-size:clamp(28px,3.4vw,42px);margin-bottom:12px;}
