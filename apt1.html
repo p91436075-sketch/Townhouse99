@@ -41,7 +41,7 @@
 <main class="container">
   <div class="breadcrumb"><a href="index.html">Головна</a> / <a href="index.html#apartments">Апартаменти</a> / House&amp;House 84/1</div>
 
-  <div class="gallery">
+  <div class="gallery" data-photos-var="mainPhotos">
     <a href="#"><img src="apartments/apt1-1.jpg" alt="House&amp;House 84/1 — кімната"></a>
     <a href="#"><img src="apartments/apt1-3.jpg" alt="House&amp;House 84/1 — спальна зона"></a>
     <a href="#"><img src="apartments/apt1-4.jpg" alt="House&amp;House 84/1 — душова"></a>
@@ -50,7 +50,7 @@
   </div>
 
   <div class="detail-layout">
-    <div>
+    <div class="detail-head">
       <h1 class="detail-title">House&amp;House 84/1</h1>
       <div class="detail-meta">
         <span>2 гостя</span>
@@ -60,7 +60,9 @@
       </div>
       <div class="detail-rating">★ 5,0 <span>· 17 відгуків · Petropavlivska Borshchahivka</span></div>
       <div class="detail-price">1100 грн<span> / доба</span></div>
+    </div>
 
+    <div class="detail-body">
       <p class="detail-desc">Затишна студія в мінімалістичному стилі: кухня-куточок з усім необхідним для приготування їжі, зручний диван, що розкладається на двоспальне ліжко, та маленьке подвір'я для відпочинку на свіжому повітрі. У санвузлі — душова кабіна та пральна машина.</p>
 
       <h3 class="amenities-title">Зручності</h3>
@@ -139,7 +141,7 @@
 </div>
 
 <script>
-const photos = [
+const mainPhotos = [
   "apartments/apt1-1.jpg",
   "apartments/apt1-3.jpg",
   "apartments/apt1-4.jpg",
