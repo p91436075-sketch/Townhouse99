@@ -368,6 +368,13 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .detail-price{font-size:22px;font-weight:800;color:var(--ink);margin-bottom:20px;}
 .detail-price span{font-size:14px;font-weight:600;color:var(--ink-soft);}
 .detail-desc{font-size:16px;color:var(--ink-soft);white-space:pre-line;margin-bottom:36px;line-height:1.75;}
+.checkinout{display:flex;gap:36px;margin:-16px 0 36px;padding:16px 20px;background:var(--surface);border:1px solid var(--line);border-radius:14px;flex-wrap:wrap;}
+.checkinout-item{display:flex;flex-direction:column;gap:3px;}
+.checkinout-item span{font-size:11px;font-weight:700;color:var(--ink-soft);text-transform:uppercase;letter-spacing:.04em;}
+.checkinout-item b{font-size:15px;color:var(--ink);}
+@media (max-width:600px){
+  .checkinout{gap:24px;padding:14px 18px;}
+}
 .detail-desc + h3, .amenities-title{font-family:'Nunito', sans-serif;font-weight:800;font-size:19px;margin-bottom:20px;}
 .amenities-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-bottom:20px;}
 .amenity{display:flex;gap:8px;align-items:center;font-size:15px;}
@@ -387,7 +394,7 @@ footer{background:var(--footer-bg);color:var(--footer-ink);position:relative;ove
 .booking-card .btn{width:100%;margin-bottom:10px;}
 .booking-price{font-size:28px;font-weight:800;color:var(--ink);margin-bottom:18px;}
 .booking-price span{font-size:14px;font-weight:600;color:var(--ink-soft);}
-.booking-note{font-size:12px;color:var(--ink-soft);margin-top:14px;text-align:center;}
+.booking-note{font-size:12px;color:var(--ink-soft);margin:-6px 0 16px;text-align:center;line-height:1.4;}
 
 /* Contact menu (Telegram / Viber / WhatsApp) */
 .contact-menu{position:relative;}
